@@ -44,17 +44,21 @@ export const useBlogStore = defineStore("blog",()=>{
         .then(result => result == 200? router.push("/") : alert("수정 실패") );
     }
 
-    const postHandler = (blog) =>{
+    const postHandler = (blog) => {
+        const newId = String(blogs.value.length + 1);  // blogs 배열의 길이에 1을 더한 값을 문자열로 변환
         fetch(import.meta.env.VITE_API_URL + "/post", {
-            method:"POST",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
-                id : (blogs.value.length + 1),
-                title : blog.title,
-                content : blog.content.trim(),
-                img :blog.img
+                id: newId,  // 동적으로 할당된 id 값 사용
+                title: blog.title,
+                content: blog.content.trim(),
+                img: blog.img
             })
         }).then(response => response.status)
-        .then(result => result == 201? router.push("/") : alert("수정 실패") );
+        .then(result => result == 201 ? router.push("/") : alert("수정 실패"));
     }
 
     const deleteHandler = (id) =>{
