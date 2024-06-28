@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="postFragment">
+<head>
+</head>
+<body>
+
+<a th:href="@{/blogPost1}">
+    <div class="post" th:if="${post.title == '주순태'}">
+        <div class="box">
+            <div class="img">
+                <img th:src="@{/images/STBP.PNG}" alt="Post Image">
+            </div>
+            <div class="info">
+                <h3 th:text="${post.title}"></h3>
+                <p th:text="${post.description}"></p>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a th:href="@{/blogPost2}">
+    <div class="post" th:if="${post.title == '서은진'}">
+        <div class="box">
+            <div class="img">
+                <img th:src="@{/images/sample022.PNG}" alt="Post Image">
+            </div>
+            <div class="info">
+                <h3 th:text="${post.title}"></h3>
+                <p th:text="${post.description}"></p>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a th:href="@{/blogPost3}">
+    <div class="post" th:if="${post.title == '김기호'}">
+        <div class="box">
+            <div class="img">
+                <img th:src="@{/images/blogPost3Logo.jpg}" alt="Post Image">
+            </div>
+            <div class="info">
+                <h3 th:text="${post.title}"></h3>
+                <p th:text="${post.description}"></p>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a th:href="@{/blogPost4}">
+    <div class="post" th:if="${post.title == '강형석'}">
+        <div class="box">
+            <div class="img">
+                <img th:src="@{/images/springmasct.png}" alt="Post Image">
+            </div>
+            <div class="info">
+                <h3 th:text="${post.title}"></h3>
+                <p th:text="${post.description}"></p>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a th:href="@{/blogPost5}">
+    <div class="post" th:if="${post.title == '이서현'}">
+        <div class="box">
+            <div class="img">
+                <img th:src="@{/images/soori.png}" alt="Post Image">
+            </div>
+            <div class="info">
+                <h3 th:text="${post.title}"></h3>
+                <p th:text="${post.description}"></p>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a th:href="@{/blogPost6}">
+    <div class="post" th:if="${post.title == '황정한'}">
+        <div class="box">
+            <div class="img">
+                <img th:src="@{/images/12345.jpg}" alt="Post Image">
+            </div>
+            <div class="info">
+                <h3 th:text="${post.title}"></h3>
+                <p th:text="${post.description}"></p>
+            </div>
+        </div>
+    </div>
+</a>
+
+</body>
+</html>
